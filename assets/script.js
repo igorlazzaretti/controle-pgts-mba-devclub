@@ -119,3 +119,27 @@ function renderTable() {
 
 // Inicializar tabela
 renderTable();
+
+// Função Pix Copia e Cola
+function copyPix() {
+  const pixCode = "00020101021126360014br.gov.bcb.pix0114+55549994898405204000053039865802BR5915IGOR LAZZARETTI6013SAO JOSE DOS 62070503***6304CA86";
+
+  navigator.clipboard.writeText(pixCode).then(() => {
+    const btn = document.getElementById('btn-pix');
+    const originalContent = btn.innerHTML;
+
+    // Feedback visual
+    btn.innerHTML = '<span class="material-symbols-outlined">check</span> Código Copiado!';
+    btn.style.borderColor = 'var(--accent-green)';
+    btn.style.color = 'var(--accent-green)';
+
+    setTimeout(() => {
+      btn.innerHTML = originalContent;
+      btn.style.borderColor = '';
+      btn.style.color = '';
+    }, 3000);
+  }).catch(err => {
+    console.error('Erro ao copiar:', err);
+    alert('Erro ao copiar. Tente selecionar e copiar manualmente.');
+  });
+}

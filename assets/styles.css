@@ -163,6 +163,23 @@ body.dark-mode .btn-dark {
   color: black;
 }
 
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-light);
+}
+
+body.dark-mode .btn-secondary {
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
 /* ===== MAIN CONTAINER ===== */
 .main-container {
   max-width: 80rem;
@@ -300,6 +317,13 @@ body.dark-mode .stat-description {
 
 .stat-description-dark {
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== PIX SECTION ===== */
+.pix-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 /* ===== PAYMENTS SECTION ===== */
